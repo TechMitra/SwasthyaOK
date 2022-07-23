@@ -1,1 +1,1 @@
-print("hello front-end");
+print("hello");
