@@ -2,12 +2,15 @@ const mongoose = require("mongoose");
 
 const HospitalSchema = new mongoose.Schema({
 
-    username: { type: String, required: true, unique: true },
+    hospitalName: { type: String, required: true, unique: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     address: { type: String, required: true },
-    isAdmin: { type: Boolean, default: false },
-    isHospital: { type: Boolean, default: true }
+    contact : { type : Array, required: true },
+    doctorsList : { type : Array, required: true },
+    departmentsList : { type : Array, required: true },
+    treatmentList : { type : Array, required: true },
+    policies : { type : Array, required: true },
 },
     { timestamps: true }
 
