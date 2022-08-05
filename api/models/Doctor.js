@@ -7,6 +7,7 @@ const DoctorSchema = new mongoose.Schema({
     password: { type: String, required: true },
     mobileNo: { type: String, unique: true },
     age: { type: String, required: true },
+    address: { type: String, required: true },
     dob: { type: String, required: true },
     gender: { type: String, required: true },
     isAdmin: { type: Boolean, default: false },
