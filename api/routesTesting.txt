@@ -1,0 +1,21 @@
+
+//Register post localhost:8800/api/auth/Register
+{
+        "username":"ShriTet2",
+        "mobileNo":"78749",
+        "email":"shrerfi4@gmail",
+        "password":"12683",
+        "age":"40",
+        "address":"pune",
+        "dob":"4/8/2013",
+        "gender":"male"
+}
+
+
+//Login post localhost:8800/api/auth/Login
+{
+        
+        "username":"ShriTet2",
+        "password":"12683"
+        
+}
