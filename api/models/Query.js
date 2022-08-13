@@ -6,7 +6,7 @@ const QuerySchema = new mongoose.Schema({
     hospitalID: { type: Number, required: true },
     queryText: { type: String, required: true},
     queryAttachment: { type: String, required: true },
-    queryStatus: {type: String, required: true}
+    queryStatus: {type: String, default: "Submitted_From_User"}
 },
     { timestamps: true }
 

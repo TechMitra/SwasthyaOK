@@ -6,6 +6,7 @@ dotenv.config();
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 const adminAuthRoute = require("./routes/authAdmin");
+const adminRoute = require("./routes/admins");
 
 
 
@@ -20,7 +21,8 @@ app.use(express.json());
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
-app.use("/api/admin",adminAuthRoute);
+app.use("/api/adminAuth",adminAuthRoute);
+app.use("/api/admin",adminRoute);
 
 
 

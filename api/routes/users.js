@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const User = require("../models/User");
+const Query = require("../models/Query");
 const CryptoJS = require("crypto-js");
+const { route } = require("..");
 
 
 
@@ -68,5 +70,49 @@ router.delete("/delete/:id", async (req, res) => {
 
 });
 
+
+
+//Submit/Raise  Query
+
+router.post("/submitQuery/:id", async (req,res)=>{
+
+    const newQuery = new Query({
+        userID: req.params.id,
+        hospitalID : req.body.hospitalID,
+        queryText: req.body.queryText,
+        queryAttachment: req.body.queryAttachment,
+    
+    });
+
+    try {
+        await newQuery.save();
+        res.status(201).json(newQuery);
+    } catch (error) {
+        res.status(500).json(error);
+        res.status(501).json("Server Error while submitting query");
+    }
+
+});
+
+
+// view Submitted queries according to you.
+
+router.get("/viewSubmittedQuery/",async (req,res)=>{
+
+    let filter={}
+
+    if(req.query.categories){
+            filter = {userID: req.query.categories.split(',')};
+    }
+
+    try {
+        const myQueries = await Query.find(filter).populate('userID');
+         res.status(200).json(myQueries);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+
+
+});
 
 module.exports = router;
