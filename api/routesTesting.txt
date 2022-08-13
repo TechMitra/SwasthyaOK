@@ -19,3 +19,10 @@
         "password":"12683"
         
 }
+
+//Update put localhost:8800/api/users/update/:id
+{
+        
+        "username":"ShriTet2",
+        
+}
